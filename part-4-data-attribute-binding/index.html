@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+        <!-- Binding data: this is called strind interpolation(data inside {{}}   ): -->
+        <h2>Welcome to: {{ tutorialInfo.name }}</h2>
+
+        <!-- Binding HTML tag(image, href,...). WHen binding HTML attribute we do it using v-bind -->
+        <p>
+            Get the code in this link 
+            <a v-bind:href=" tutorialInfo.githubLink ">Github</a>
+            <!-- shortcut to bind by using : -->
+            <hr />
+            <a :href=" tutorialInfo.githubLink ">Github</a>
+        </p>
+
+        <hr />
+        <!-- Directly shows the code: -->
+        <p> This is the link of {{ tutorialInfo.htmlCode }}</p>
+        <hr />
+
+        
+        <!-- if want to show the output of the link:[tutorialInfo.htmlCode] value never comes from user input. If then used as attacking the page by hacker -->
+        <p v-html="tutorialInfo.htmlCode"></p>
+
+    </div>
+
+    
+    
+    <script src="app.js">
+    </script>
+
+</html>
