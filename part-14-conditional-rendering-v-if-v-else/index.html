@@ -14,19 +14,22 @@
   </header>
 
   <div id="app">
-    <!-- Normal style is: -->
-    <div class="card" :style="{backgroundColor: bgColor, color: textColor}">
-      Card
-    </div>
+    <button @click="toggle">Show / Hide</button>
+    <div class="card" v-show="show"></div>
+    <br />
+    <hr />
+    <br />
 
-    <!-- Vue binding style -->
-
-    <input type="text" v-model="textColor" /> <br />
-    <input type="text" v-model="bgColor" />
-    <input type="color" v-model="bgColor" />
-    <div class="card" :style="{backgroundColor: bgColor, color: textColor}">
-      Card
-    </div>
+    <ul>
+      <li v-for="(skill, i) in skills" :key="skill.name">
+        <p>
+          {{i + 1}}. {{ skill.name }} -
+          <span v-if="skill.experience < 4">Beginner</span>
+          <span v-else-if="skill.experience < 6">Proficient</span>
+          <span v-else>Expert</span>
+        </p>
+      </li>
+    </ul>
   </div>
 
   <script src="app.js"></script>

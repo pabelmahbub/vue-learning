@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Document</title>
+</head>
+<body>
+  <header>
+    <h2>Vue JS 3 </h2>
+  </header>
+
+  <div id="app">
+    <h3>About Me</h3>
+    <table>
+      <!-- When looping on an object total item return is 3- (value, key, i)and in array it is 2-(item, i) -->
+      <tr v-for="(value, key, i) in aboutMe">
+        <th>{{i + 1}}</th>
+        <th>{{key}}</th>
+        <td>{{value}}</td>
+      </tr>
+    </table>
+
+    <h3>Skills</h3>
+
+    <p>
+      <template v-for="skill in skills" :key="skill.name">
+        {{ skill.name }},
+      </template>
+    </p>
+    <br />
+
+    <div>
+      <p v-for="i in 6">{{ i }}</p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

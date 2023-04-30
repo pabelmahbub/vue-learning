@@ -15,28 +15,23 @@
 
   <div id="app">
     <h3>Skills</h3>
-    <!-- Only in string in array -->
-    <input  v-model="newSkill" type="text"/>
+    <input type="text" v-model="newSkill.name" />
     <button @click="addSkill">Add</button>
     <ul>
-     <li v-for="(skill, i) in skills" @click="removeSkill">{{i+1}}--{{skill}}</li>
+
+      <!-- In :Key always use unique value. Not i or something! -->
+      <li
+        v-for="(skill, i) in skills"
+        @click="removeSkill(i)"
+        :key="skill.name"
+      >
+        <p>
+          {{i + 1}}. {{ skill.name }} ({{ skill.experience }})
+          <br />
+          <input type="text" placeholder="remark" @click.stop />
+        </p>
+      </li>
     </ul>
-
-
-
-    <div>
-      <!-- Object in array -->
-      <h3>Skills using with experience:</h3>
-      <input type="text" v-model="newSkill1.name" />
-      <button @click="addSkill1">Add</button>
-      <ul>
-        <li v-for="(skill1, i) in skills1" @click="removeSkill1(i)">
-          {{i + 1}}. {{ skill1.name }} ({{ skill1.experience }})
-        </li>
-      </ul>
-    </div>
-
-
   </div>
 
   <script src="app.js"></script>
