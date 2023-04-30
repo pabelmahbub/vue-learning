@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+
+    <div id="app">
+
+      <h2>Two way data binding:</h2>
+      <!-- general system   2 way data binding  and using data from input and use it by button-->
+      <h3>Enter a number:</h3>
+      <!-- 2 way data binding by using :value="number" in input field. But in Vue we can do it using v-model:  -->
+      <input :value="number" type="number" @input="handleInput"/>
+      <hr/>
+
+      
+      <label>Entered number is: {{ number }}</label>
+      <hr/>
+      <label>Result is: {{result}}</label>
+      <hr/>
+      <br />
+
+
+      <button @click="getDouble">Get double</button>
+
+
+      <hr/>
+      <button @click="getTriple">Get Tirple</button>
+
+      <hr/>
+      <button @click="addHundred">add 100</button>
+      <hr/>
+
+      <button @click="reset">reset</button>
+
+
+
+      <!-- Vue way to do it [2-way binding]: -->
+      <h1>
+        Now in vue way:2 way data binding:
+      </h1>
+
+      <h2>Two way data binding:</h2>
+      <h3>Enter a number:</h3>
+      <!-- to get the value as parseInt from input -->
+      <input v-model.number="number1" type="text" />
+      <!-- OR -->
+      <br/>
+      <hr/>
+      <input v-model="number1" type="number" />
+      <hr/>
+
+      <!-- Other v-model props: -->
+      <br/>
+      <hr/>
+      <input v-model.trim="number1" type="number" />
+      <hr/>
+      
+      <label>Entered number is: {{ number1 }}</label>
+      <hr/>
+      <label>Result is: {{result1}}</label>
+      <hr/>
+      <br />
+
+
+      <button @click="getDouble1">Get double</button>
+
+
+      <hr/>
+      <button @click="getTriple1">Get Tirple</button>
+
+      <hr/>
+      <button @click="addTen">Add Ten</button>
+
+      <hr/>
+
+
+      <button @click="reset1">reset</button>
+
+
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

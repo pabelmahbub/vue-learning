@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+
+    <div id="app">
+      <h3>Enter your name</h3>
+      <input type="text" @keyup="handleKeyup"/>
+      <p> Welcome {{ name }}</p>
+
+      <input type="text" @keyup.enter="handleKeyup1"/>
+      <p> Welcome {{ name1 }}</p>
+
+
+    <form @submit.prevent="handleFormSubmit">
+      <h3>Enter your name</h3>
+      <input type="text" @keyup="handleKeyup"/>
+     <button type="submit">Submit</button>
+
+
+    </form>
+
+    <hr/>
+    <div style="width:80px; height:80px; background-color:blue" @click="handleCardClick">
+        <button @click.stop="handleViewClick">View</button>
+      </div>
+
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

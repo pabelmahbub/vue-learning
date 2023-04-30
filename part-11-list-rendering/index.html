@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Document</title>
+</head>
+<body>
+  <header>
+    <h2>Vue JS 3 Bangla Tutorial</h2>
+  </header>
+
+  <div id="app">
+    <h3>Skills</h3>
+    <!-- Only in string in array -->
+    <input  v-model="newSkill" type="text"/>
+    <button @click="addSkill">Add</button>
+    <ul>
+     <li v-for="(skill, i) in skills" @click="removeSkill">{{i+1}}--{{skill}}</li>
+    </ul>
+
+
+
+    <div>
+      <!-- Object in array -->
+      <h3>Skills using with experience:</h3>
+      <input type="text" v-model="newSkill1.name" />
+      <button @click="addSkill1">Add</button>
+      <ul>
+        <li v-for="(skill1, i) in skills1" @click="removeSkill1(i)">
+          {{i + 1}}. {{ skill1.name }} ({{ skill1.experience }})
+        </li>
+      </ul>
+    </div>
+
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
